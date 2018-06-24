@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
+import java.util.Optional;
 
 public interface TaskRepository extends CrudRepository<Task, Long> {
     @Override
@@ -16,5 +17,8 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
 
     @Transactional
     void deleteById(Long id);
+
+    @Transactional
+    Task findById(Long id);
 
 }
