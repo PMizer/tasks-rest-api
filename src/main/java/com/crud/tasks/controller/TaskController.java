@@ -12,7 +12,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/v1/task")
+@RequestMapping("/v1/task") // zmienic na task
 public class TaskController {
     @Autowired
     private DbService service;
@@ -29,7 +29,7 @@ public class TaskController {
         return taskMapper.mapToTaskDto(service.getTask(taskId));
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/tasks")
+    @RequestMapping(method = RequestMethod.PUT, value = "updateTask")
     public TaskDto updateTask(@RequestBody TaskDto taskDto) {
         return taskMapper.mapToTaskDto(service.saveTask(taskMapper.mapToTask(taskDto)));
     }
@@ -39,7 +39,7 @@ public class TaskController {
         service.saveTask(taskMapper.mapToTask(taskDto));
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{taskId}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/deleteTask/{taskId}")
     public void deleteTask(@PathVariable Long taskId) {
         service.deleteTask(taskId);
     }

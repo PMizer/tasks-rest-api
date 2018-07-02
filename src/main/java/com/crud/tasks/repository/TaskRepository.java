@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
-import java.util.Optional;
 
 public interface TaskRepository extends CrudRepository<Task, Long> {
     @Override
