@@ -13,7 +13,7 @@ public class TasksApplication extends SpringBootServletInitializer {
 	}
 
 	@Override
-	protected SpringApplicationBuilder configure (SpringApplicationBuilder applciation) {
-		return applciation.sources(TasksApplication.class);
+	protected SpringApplicationBuilder configure (SpringApplicationBuilder application) {
+		return application.sources(TasksApplication.class);
 	}
 }
